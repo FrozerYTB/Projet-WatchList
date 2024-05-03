@@ -1,6 +1,6 @@
 async function fetchAnimeList() {
     try {
-        const response = await fetch('https://anilistmikilior1v1.p.rapidapi.com/createThread');
+        const response = await fetch('https://api.myanimelist.net/v2');
         const data = await response.json();
         return data;
     } catch (error) {
