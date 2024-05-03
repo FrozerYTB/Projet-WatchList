@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/04ea835306.js" crossorigin="anonymous"></script>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="php/Inscription.php" rel="stylesheet">
+    <title>Inscription</title>
+    <script>
+        function redirectToConnexion() {
+            window.location.href = "Connexion.html";
+        }
+    </script>
+</head>
+<body>
+    <h2>Inscription</h2>
+    <img src="images/Groupinscription.png" alt="Inscription">
+    <form action="inscription.php" method="post">
+        <label for="username">Nom d'utilisateur:</label><br>
+        <input type="text" id="username" name="username" required><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="password">Mot de passe:</label><br>
+        <input type="password" id="password" name="password" required><br>
+        <label for="verify_password">Vérifier le mot de passe:</label><br>
+        <input type="password" id="verify_password" name="verify_password" required><br><br>
+        <input type="submit" value="S'inscrire">
+    </form>
+</body>
+</html>
