@@ -1,6 +1,6 @@
-async function fetchFilmList() {
+async function fetchMovieList() {
     try {
-        const response = await fetch('');
+        const response = await fetch('https://api.themoviedb.org/3/authentication');
         const data = await response.json();
         return data;
     } catch (error) {
@@ -8,28 +8,30 @@ async function fetchFilmList() {
     }
 }
 
-// Fonction pour afficher les films sur la page
-async function displayFilmList() {
-    const filmList = await fetchAnimeList();
-    const filmListSection = document.getElementById('anime-list');
+async function displayMovieList() {
+    const movieList = await fetchMovieList();
+    const movieListSection = document.getElementById('movie-list');
 
-    filmList.forEach(anime => {
-        const filmItem = document.createElement('div');
-        filmItem.classList.add('anime-item');
-        filmItem.innerHTML = `
-            <h2>${film.title}</h2>
-            <p>${film.synopsis}</p>
-            <button onclick="showFilmDetails('${film.id}')">Voir les détails</button>
+    movieList.forEach(movie => {
+        const movieItem = document.createElement('div');
+        movieItem.classList.add('movie-item');
+        movieItem.innerHTML = `
+            <h2>${movie.title}</h2>
+            <p>${movie.synopsis}</p>
+            <button onclick="showMovieDetails('${movie.id}')">Voir les détails</button>
         `;
-        filmListSection.appendChild(filmItem);
+        movieListSection.appendChild(movieItem);
     });
 }
 
-// Fonction pour afficher les détails d'un film sélectionné
-async function showFilmDetails(animeId) {
+async function showMovieDetails(movieId) {
     // Logique pour récupérer les détails du film avec l'ID spécifié
-    // Afficher les détails dans la section #film-details
+    // Afficher les détails dans la section #movie-details
 }
 
-// Appel de la fonction pour afficher la liste de film au chargement de la page
-window.onload = displayFilmList;
+window.onload = displayMovieList;
+
+
+
+
+const request = require('request');

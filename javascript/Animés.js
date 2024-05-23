@@ -1,6 +1,6 @@
 async function fetchAnimeList() {
     try {
-        const response = await fetch('https://api.myanimelist.net/v2');
+        const response = await fetch('https://anime-db.p.rapidapi.com/anime');
         const data = await response.json();
         return data;
     } catch (error) {
