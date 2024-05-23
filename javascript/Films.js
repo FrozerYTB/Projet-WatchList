@@ -1,6 +1,7 @@
 async function fetchMovieList() {
     try {
-        const response = await fetch('https://api.themoviedb.org/3/authentication');
+        const response = await fetch('https://api.themoviedb.org/3/movie/11?api_key=ad498479a8cb52400b6febba8a692c77');
+        const header  = 'accept: application/json'
         const data = await response.json();
         return data;
     } catch (error) {
@@ -11,7 +12,7 @@ async function fetchMovieList() {
 async function displayMovieList() {
     const movieList = await fetchMovieList();
     const movieListSection = document.getElementById('movie-list');
-
+    console.log(movieList)
     movieList.forEach(movie => {
         const movieItem = document.createElement('div');
         movieItem.classList.add('movie-item');
@@ -30,8 +31,3 @@ async function showMovieDetails(movieId) {
 }
 
 window.onload = displayMovieList;
-
-
-
-
-const request = require('request');
